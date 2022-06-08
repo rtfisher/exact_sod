@@ -8,7 +8,10 @@
 */
 */  Solution is computed at locations x at time t. (Though   
 */  due to self-similarity, the exact solution is identical for
-*/  identical values of x/t).
+*/  identical values of x/t). Output to the file 'exact_sod.out'
+*/  is in the format
+*/
+*/       x position, density, velocity, pressure
 */
 */  NOTE : Since the post-shock flow is nonadiabatic, whereas
 */  the flow inside the rarefraction fan is adiabatic, the problem
@@ -18,7 +21,7 @@
 */  Written by Robert Fisher, 12/5/96.
 */
 */  Edited : 12/15/96, typo in output of pressure corrected. R.F.
-*/
+*/            6/08/22, removed 'pause' command, added output comment. R.F.
 */////////////////////////////////////////////////////////////////
 
       implicit none
@@ -192,7 +195,10 @@ C numcells determines the number of cells in the output table.
       REAL*8 dx,f,fmid,xmid
       fmid=func(x2)
       f=func(x1)
-      if(f*fmid.ge.0.) pause 'root must be bracketed in rtbis'
+      if(f*fmid.ge.0.) then
+        print *, 'root must be bracketed in rtbis'
+        stop
+      endif
       if(f.lt.0.)then
         rtbis=x1
         dx=x2-x1
@@ -207,5 +213,5 @@ C numcells determines the number of cells in the output table.
         if(fmid.le.0.)rtbis=xmid
         if(dabs(dx).lt.xacc .or. fmid.eq.0.) return
 11    continue
-      pause 'too many bisections in rtbis'
+      print *, 'too many bisections in rtbis'
       END
