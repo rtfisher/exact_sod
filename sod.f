@@ -14,7 +14,7 @@
 */       x position, density, velocity, pressure
 */
 */  NOTE : Since the post-shock flow is nonadiabatic, whereas
-*/  the flow inside the rarefraction fan is adiabatic, the problem
+*/  the flow inside the rarefaction fan is adiabatic, the problem
 */  is not left-right symmetric. In particular, the high-density
 */  initial state MUST BE input on the left side.
 */ 
@@ -137,7 +137,7 @@ C numcells determines the number of cells in the output table.
 
       close (6)
 
-  10  format (D22.16, ' ', D22.16, ' ', D22.16, ' ', D22.16)  
+  10  format (E22.16, ' ', E22.16, ' ', E22.16, ' ', E22.16)  
                     
       End
 
