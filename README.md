@@ -7,11 +7,11 @@ Users can use this program to test their hydrodynamics solvers against the exact
 It also contains an interactive plot library plotly https://plotly.com/python that helps to easily visulaize the data obtained. To run the program:
 
 1. make sure you have a fortran compiler installed in your machine.
-2. run the following commands:
-    ~ gfortran sod.f
-    ~ ./a.out
-    ~ python plot.py   
+ run the following commands:
+2.    ~ gfortran sod.f
+3.    ~ ./a.out
+4.    ~ python plot.py   
 
-3. before executing the plot.py file, make sure you have plotly installed as well ( pip install plotly)
+before executing the plot.py file, make sure you have plotly installed as well ( pip install plotly)
 
 Have Fun!
